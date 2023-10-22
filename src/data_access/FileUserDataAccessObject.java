@@ -58,6 +58,10 @@ public class FileUserDataAccessObject implements SignupUserDataAccessInterface, 
         accounts.put(user.getName(), user);
         this.save();
     }
+    public void clearUsers() {
+        accounts.clear(); // Clear the user data in memory
+        save(); // Save the changes to the CSV file
+    }
 
     @Override
     public User get(String username) {
